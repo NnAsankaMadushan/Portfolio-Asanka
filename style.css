@@ -200,7 +200,8 @@ span{
 }
 .services-list div{
     /* background: #79797e; */
-    background: orange;
+    /* background: linear-gradient(rgba(209, 160, 23, 0.6),#3a3211); */
+    background: linear-gradient(orange,#d4cca8);
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
@@ -218,14 +219,14 @@ span{
 }
 .services-list div a{
     text-decoration: none;
-    color: orange;
+    color: #ffffff;
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
 }
 .services-list div:hover{
     /* background: #165e5a; */
-    background: orange;
+    background: linear-gradient(rgba(238, 203, 49, 0.6),#745603);
     transform: translateY(-10px);
 }
 .container{
@@ -235,6 +236,7 @@ span{
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .container-mywork{
     padding: 10px 5%;
     /* color: rgb(68,60,60); */
@@ -251,6 +253,9 @@ span{
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
+}
+.icon-color{
+    color: #363636;
 }
 
 #about {
@@ -414,18 +419,17 @@ span{
 .layer p{
     color: #ffffff;
 }
+
 .layer a{
     margin-top: 20px;
-    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
-    background: orange;
+    background: #ffffff;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     text-align: center;
-    color: #ffffff;
 }
 .work:hover img{
     transform: scale(1.1);
@@ -451,6 +455,7 @@ span{
 /* contact */
 .contact-left{
     flex-basis: 35%;
+    
 }
 .contact-right{
     flex-basis: 60%;
@@ -466,12 +471,14 @@ span{
     font-weight:600;
 }
 .contact-left p i{
-    color: orange ;
+    /* color: orange ; */
     margin-right: 15px;
     font-size: 25px;
 }
 .social-icons{
     margin-top: 30px;
+    color: rgb(255, 94, 0);
+    
 }
 .social-icons a{
     text-decoration: none;
@@ -482,7 +489,7 @@ span{
     transition: transform 0.5s;
 }
 .social-icons a:hover{
-    color: #ffffff;
+    color: orange;
     transform: translateY(-5px);
 }
 .btn.btn2{
@@ -504,7 +511,8 @@ form input, form textarea{
     width: 100%;
     border: 0;
     outline: none;
-    background: #ffffff;
+    /* background: #ffffff; */
+    border: solid 2px orange;
     padding: 15px;
     margin: 15px 0;
     color: rgb(68, 68, 60) ;
@@ -521,17 +529,16 @@ form .btn2{
     width: 100%;
     text-align: center;
     padding: 25px 0;
-    color: orange ;
+   
     font-weight: 300;
     margin-top: 20px;
 }
 .copyright p{
-    color: orange;
+    color: #3b3b3d;
 }
 nav .fas{
     display: none;
 }
-
 @media only screen and (max-width:600px){
     #header{
         background-image: url(images/background3s.png);
