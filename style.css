@@ -229,18 +229,19 @@ span{
     transform: translateY(-10px);
 }
 .container{
-    padding: 10px 10%;
+    padding: 10px 5% 15px 5%;
     color: rgb(68,60,60);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 .container-mywork{
-    padding: 10px 10%;
+    padding: 10px 5%;
     /* color: rgb(68,60,60); */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    margin-top: 10px;
     /* justify-content: center; */
 }
 .container-contact{
@@ -368,10 +369,12 @@ span{
     padding: 50px 0;
 }
 .work-list{
-    display: grid;
+    display: flex;
+    /* flex-wrap: wrap; */
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     grid-gap:40px;
     margin-top: 40px;
+    flex-direction: row;
 }
 .work{
     border-radius: 10px;
