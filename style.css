@@ -126,9 +126,10 @@ span{
     display: flex;
     align-items: center;
     padding: 30px 100px;
+    /* flex-basis: 30%; */
 }
 .content{
-    max-width: 500px;
+    max-width: 900px;
     color: rgb(68, 68, 60) ;
 }
 .content h2{
