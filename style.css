@@ -270,6 +270,13 @@ span{
     align-items: center;
     flex-direction: row;
 }
+.contact-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
 .row-mywork{
     margin-top: 222px;
     display: flex;
@@ -456,7 +463,6 @@ span{
 /* contact */
 .contact-left{
     flex-basis: 35%;
-    
 }
 .contact-right{
     flex-basis: 60%;
