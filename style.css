@@ -140,6 +140,7 @@ span{
 }
 .content p{
     padding: 10px 0 15px 0;
+    color: rgb(2, 21, 48);
 }
 .group-tombol{
     margin-top: 10px;
@@ -319,6 +320,7 @@ span{
 }
 .text{
     padding: 10px 0 15px 0;
+    
 }
 .web-text{
     color: #ffffff;
@@ -328,14 +330,15 @@ span{
     color: #ffffff;
 }
 .about-col-2 p{
-    color: #363636;
+    color: rgb(2, 21, 48);
 }
 .tab-title p{
-    color: rgb(68, 68, 60) ;
+    color: rgb(2, 21, 48); ;
 }
 .tab-title{
     display: flex;
     margin: 20px 0 40px;
+    color: rgb(2, 21, 48);
 }
 .tab-links{
     margin-right: 50px;
@@ -343,6 +346,7 @@ span{
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    color: rgb(2, 21, 48);
 }
 .tab-links::after{
     content: '';
@@ -361,13 +365,14 @@ span{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    color: rgb(2, 21, 48);
 }
 .tab-contents ul{
-    color: #3b3b3d;
+    color: rgb(2, 21, 48);
 }
 .tab-contents ul li span{
     /* color: #165e5a; */
-    color: rgb(68, 68, 60) ;
+    color: rgb(2, 21, 48);
     font-size: 14px;
     font-weight: bolder;
 }
