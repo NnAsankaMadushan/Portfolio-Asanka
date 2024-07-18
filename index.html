@@ -175,30 +175,31 @@
         <section>
             <div id="contact">
                 <div class="container-mywork">
-                    <h2 class="sub-title">Contact <span>Me</span></h2>
-                    <div class="contact-row">
-                        <div class="contact-left">
-                            <p><i class="bx bx-envelope icon-color"></i> nnamadushan@gmail.com</p>
-                        <p><i class="bx bx-phone icon-color"></i> 0765585812</p>
-                            <div class="social-icons">
-                                <a href="https://web.facebook.com/profile.php?id=100005216388114"><i class="bx bxl-facebook-circle"></i></a>
-                                <a href=""><i class="bx bxl-twitter"></i></a>
-                                <a href=""><i class="bx bxl-instagram"></i></a>
-                                <a href=""><i class="bx bxl-linkedin"></i></a>
-                            </div>
-                            <a href="images/Asanka Madushan.pdf" download="" class="btn btn2">Download CV</a>
-                        </div>
-                        <div class="contact-right">
-                            <form name="submit-to-google-sheet">
-                                <input type="text" name="Name" placeholder="Your Name" required>
-                                <input type="email" name="email" placeholder="Your Email" required>
-                                <textarea name="Message" rows="6" placeholder="Your Message"></textarea> 
-                                <button type="submit" class="btn btn2">Submit</button>
-                            </form>
-                            <!-- <span id="msg">Hello</span> -->
-                        </div>
+                  <h2 class="sub-title">Contact <span>Me</span></h2>
+                  <div class="contact-row">
+                    <div class="contact-left">
+                      <p><i class="bx bx-envelope icon-color"></i> nnamadushan@gmail.com</p>
+                      <p><i class="bx bx-phone icon-color"></i> 0765585812</p>
+                      <div class="social-icons">
+                        <a href="https://web.facebook.com/profile.php?id=100005216388114"><i class="bx bxl-facebook-circle"></i></a>
+                        <a href=""><i class="bx bxl-twitter"></i></a>
+                        <a href=""><i class="bx bxl-instagram"></i></a>
+                        <a href=""><i class="bx bxl-linkedin"></i></a>
+                      </div>
+                      <a href="images/Asanka Madushan.pdf" download="" class="btn btn2">Download CV</a>
                     </div>
+                    <div class="contact-right">
+                      <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea> 
+                        <button type="submit" class="btn btn2">Submit</button>
+                      </form>
+                      <span id="msg"></span>
+                    </div>
+                  </div>
                 </div>
+              </div>
                 <div class="copyright">
                     <p>Copyright ©️ Asanka. Undergraduate at University of Ruhuna</p>
                 </div>
@@ -227,22 +228,22 @@
             }
         </script>
         <script>
-            const scriptURL = '<https://script.google.com/macros/s/AKfycbzbHKgtVMwU2UHY0yTMm6rLL8kKWDalHqUQDw2YWS98rsdH7CJ02r0VNvBQSjs_Yiu-UA/exec>'
-            const form = document.forms['submit-to-google-sheet']
-            const msg = document.getElementById("msg")
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzvdTM_9ARuQgF7AXRnYbxNBU7YzfM6RtgfL9MhqwKDpTkXdKcV64fqtFr6MOj6VmC1/exec';
+            const form = document.forms['submit-to-google-sheet'];
+            const msg = document.getElementById("msg");
           
             form.addEventListener('submit', e => {
-              e.preventDefault()
+              e.preventDefault();
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    msg.innerHTML = "Message Sent Successfully!"
-                    setTimeout(function(){
-                        msg.innerHTML = ""
-                    },5000)
-                    from.reset()
+                  msg.innerHTML = "Message Sent Successfully!";
+                  setTimeout(function(){
+                    msg.innerHTML = "";
+                  }, 5000);
+                  form.reset();
                 })
-                .catch(error => console.error('Error!', error.message))
-            })
+                .catch(error => console.error('Error!', error.message));
+            });
           </script>
           <script>
              const [menuOpen, setMenuOpen] = useState(false);
