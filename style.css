@@ -697,6 +697,19 @@ nav .fas{
 .gallery img{
     width: 100%;
 }
+.gallery-mobile{
+    display: flex;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    grid-gap: 30px;
+    border: solid #4d559d;
+    padding: 1%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery-mobile img{
+    /* width: 100%; */
+    border: solid #5cb075;
+}
 
 .web-home{
     padding-top:100px ;
