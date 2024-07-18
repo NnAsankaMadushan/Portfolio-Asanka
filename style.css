@@ -678,17 +678,7 @@ nav .fas{
 }
 /* /////////////////////////////// */
 
-#header{
-    /* background-color:rgb(7, 2, 29) ; */
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-    /* background-color: rgb(7, 2, 29) */
-}
-.container{
+.container-web{
     width: 100%;
     /* min-height: 100vh; */
     display: flex;
