@@ -144,6 +144,8 @@ span{
 }
 .group-tombol{
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .group-tombol a{
     color: white;
@@ -191,8 +193,9 @@ span{
     font-size: 20px;
 }
 
-#services{
+.services{
     padding: 30px 30px;
+
 }
 .services-list{
     display: grid;
