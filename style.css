@@ -111,6 +111,7 @@ span{
     border: 2px solid #4d559d;
     font-weight: 500;
     transition: .3s;
+    text-align: center;
 }
 .tombol-download:hover{
     color: #4d559d;
