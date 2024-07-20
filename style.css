@@ -724,3 +724,68 @@ nav .fas{
     padding-top:100px ;
 }
 
+/* ///////////////////// */
+.certificates {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+.carousel_viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    list-style-type: none;
+    scrollbar-width: none; 
+}
+
+.carousel_viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.certificates::before,
+.certificates::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    translate: -50% 0;
+    width: 500%;
+    height: 500%;
+    border-radius: 50%;
+    /* background: #d8b37c; */
+}
+
+.certificates::before {
+    top: -480%;
+}
+.certificates::after {
+    bottom: -480%;
+}
+
+.carousel_slide {
+    position: relative;
+    flex: 0 0 33.33%;
+    width: 33.33%;
+}
+
+.carousel_snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 60%;
+    object-fit: cover;
+    scroll-snap-align: center;
+    background-size: cover;
+    background-position: 50%;
+    /* border: 3px solid #4d559d; */
+}
