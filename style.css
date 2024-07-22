@@ -30,7 +30,7 @@ header{
 span{
     color: #4d559d;
 }
-.navigation a{
+.nav-but{
     font-size: 1.1em;
     color: rgb(68, 60, 60);
     text-decoration: none;
@@ -39,7 +39,7 @@ span{
     font-weight: 500;
     transition: .3s;
 }
-.navigation a:hover{
+.nav-but:hover{
     color: #4d559d;
 }
 
@@ -72,7 +72,7 @@ span{
       padding: 10px 0;
     }
   
-    .navigation a {
+    .nav-but {
       margin-left: 0px;
       display: flex;
       flex-direction: column;
