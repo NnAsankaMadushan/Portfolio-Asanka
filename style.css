@@ -726,11 +726,12 @@ nav .fas{
 
 /* ///////////////////// */
 .certificates {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
-    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    text-align: center;
 }
 
 .carousel_viewport {
@@ -751,7 +752,7 @@ nav .fas{
     display: none;
 }
 
-.certificates::before,
+/* .certificates::before,
 .certificates::after {
     content: "";
     position: absolute;
@@ -762,14 +763,14 @@ nav .fas{
     height: 500%;
     border-radius: 50%;
     /* background: #d8b37c; */
-}
+} */
 
-.certificates::before {
+/* .certificates::before {
     top: -480%;
 }
 .certificates::after {
     bottom: -480%;
-}
+} */
 
 .carousel_slide {
     position: relative;
@@ -836,4 +837,27 @@ nav .fas{
     position: relative;
     z-index: 2;
     border-radius: 10px;
+}
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.certifications-grid {
+    padding-top: 25px;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.certifications-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.certifications-grid img:hover {
+    transform: scale(1.05);
 }
