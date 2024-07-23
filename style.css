@@ -535,6 +535,9 @@ span{
 }
 .contact-right form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .contact-info{
     display: flex;
