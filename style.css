@@ -730,11 +730,13 @@ nav .fas{
 /* ///////////////////// */
 .certificates {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     /* height: 100vh; */
     text-align: center;
+    flex-direction: column;
+    padding-top: 25px;
 }
 
 .carousel_viewport {
@@ -766,7 +768,7 @@ nav .fas{
     height: 500%;
     border-radius: 50%;
     /* background: #d8b37c; */
-} */
+ */
 
 /* .certificates::before {
     top: -480%;
@@ -853,6 +855,7 @@ nav .fas{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
     align-items: center;
+    flex-direction: column;
 }
 
 .certifications-grid img {
