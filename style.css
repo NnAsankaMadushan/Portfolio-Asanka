@@ -437,6 +437,17 @@ span{
     margin-top: 40px;
     flex-direction: row;
 }
+@media (max-width: 450px)
+{
+    .work-list{
+        display: flex;
+        /* flex-wrap: wrap; */
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap:40px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+}
 .work{
     border-radius: 10px;
     position: relative;
