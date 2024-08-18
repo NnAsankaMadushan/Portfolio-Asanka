@@ -33,7 +33,7 @@
         <section id="home" class="home">
             <div class="content">
                 <h2>Hi, I'm <span>Asanka</span></h2>
-                <h4>Frontend Developer</h4>
+                <h4 id="position-title">Frontend Developer</h4>
                 <p>I am currently pursuing my undergraduate studies in Electrical and Information Engineering at the University of Ruhuna, with a passion for front-end development. My unique blend of engineering knowledge and coding skills enables me to create dynamic, user-friendly web applications.</p>
                 <p>As a front-end developer, I specialize in crafting engaging, responsive interfaces using HTML, CSS, and JavaScript. My projects often incorporate modern frameworks and libraries, such as React.I'm constantly exploring new technologies to stay at the forefront of the ever-evolving tech landscape.</p>
 
@@ -257,5 +257,49 @@
                 setMenuOpen(!menuOpen);
             };
           </script>
+          <script>
+            // List of titles to cycle through
+            const titles = [
+                "Web Developer",
+                "UI/UX Designer",
+                "AI/ML Engineer",
+                "Mobile App Developer",
+                "Photographer",
+            ];
+            
+            let currentTitleIndex = 0; // To keep track of the current title
+            let charIndex = 0; // To keep track of the current character
+            let isDeleting = false; // To determine if we are adding or deleting characters
+            
+            // Function to type the title character by character
+            function typeTitle() {
+                const titleElement = document.getElementById('position-title');
+                const currentTitle = titles[currentTitleIndex];
+                
+                if (isDeleting) {
+                    titleElement.textContent = currentTitle.substring(0, charIndex - 1);
+                    charIndex--;
+            
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+                    }
+                } else {
+                    titleElement.textContent = currentTitle.substring(0, charIndex + 1);
+                    charIndex++;
+            
+                    if (charIndex === currentTitle.length) {
+                        isDeleting = true;
+                        setTimeout(typeTitle, 2000); // Pause at the full word before deleting
+                        return;
+                    }
+                }
+            
+                setTimeout(typeTitle, isDeleting ? 100 : 150); // Speed of typing/deleting
+            }
+            
+            // Start typing effect on page load
+            document.addEventListener("DOMContentLoaded", typeTitle);
+            </script>
     </body>
 </html>
