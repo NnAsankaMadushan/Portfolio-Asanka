@@ -917,3 +917,26 @@ nav .fas{
 .certifications-grid img:hover {
     transform: scale(1.05);
 }
+
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.home, .about {
+    animation: slideInFromBottom 1s ease-in-out;
+    opacity: 0; 
+    animation-fill-mode: forwards; 
+}
+
+
+.about {
+    animation-delay: 0.5s; 
+}

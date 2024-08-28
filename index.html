@@ -114,7 +114,7 @@
                             <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/5.png" alt="Certification 5">
                         </a>
                         <a href="https://drive.google.com/file/d/1PXeID7BRKzMIC80VB5J17qCn4Fqgz4i_/view?usp=drive_link" target="_blank">
-                            <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/6.png" alt="Certification 5">
+                            <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/6.png" alt="Certification 6">
                         </a>
                     </div>
                 </div>
@@ -241,6 +241,34 @@
                     <p>Copyright ©️ Asanka. Undergraduate at University of Ruhuna</p>
                 </div> -->
         </section>
+        <script>
+            // Function to check if an element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+    
+            // Function to add 'active' class to elements in view
+            function checkSections() {
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    if (isInViewport(section)) {
+                        section.classList.add('active');
+                    }
+                });
+            }
+    
+            // Run checkSections on scroll
+            window.addEventListener('scroll', checkSections);
+    
+            // Run checkSections on page load
+            window.addEventListener('load', checkSections);
+        </script>
         <script>
             var tablinks = document.getElementsByClassName("tab-links");
             var tabcontents = document.getElementsByClassName("tab-contents");

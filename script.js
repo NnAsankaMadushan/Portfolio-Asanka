@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top < window.innerHeight && rect.bottom >= 0
+        );
+    }
+
+    // Function to add 'active' class to elements in view
+    function checkSections() {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.add('active');
+                console.log(section.id + " is in the viewport"); // Debugging log
+            }
+        });
+    }
+
+    // Run checkSections on scroll
+    window.addEventListener('scroll', checkSections);
+
+    // Run checkSections on page load
+    checkSections();
+});
+
     const menuToggle = document.getElementById('menu-toggle');
     const navigation = document.getElementById('navigation');
   
