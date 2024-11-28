@@ -940,3 +940,70 @@ nav .fas{
 .about {
     animation-delay: 0.5s; 
 }
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.card {
+    width: 350px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .card .status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d4edda;
+    color: #155724;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  /* card */
+
+  /* .card img {
+    width: 100%;
+    height: auto;
+  } */
+  .card img {
+    width: 350px;
+    height: 150px;
+    object-fit: cover; /* Ensures the image is cropped proportionally */
+  }
+  .card .content {
+    padding: 16px;
+  }
+
+  .card .content h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  .card .content h2 {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .card .content a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+  }
+
+
+  .card .more {
+    font-size: 12px;
+    color: #6c757d;
+    margin-left: 8px;
+  }
