@@ -902,7 +902,7 @@ nav .fas{
     padding-top: 25px;
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 50px;
     align-items: center;
     flex-direction: column;
@@ -966,6 +966,17 @@ nav .fas{
     left: 10px;
     background: #d4edda;
     color: #155724;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .status-pending {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e28d47;
+    color: #502121;
     font-size: 12px;
     padding: 3px 8px;
     border-radius: 12px;
