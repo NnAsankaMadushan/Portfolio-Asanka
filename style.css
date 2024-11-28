@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: #363636;
+    /* background-image: url(./images/3672201.jpg); */
 }
 header{
     position: fixed;
