@@ -1019,3 +1019,34 @@ nav .fas{
     color: #6c757d;
     margin-left: 8px;
   }
+
+  .projects-container{
+    padding:100px 60px 00px 60px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Control the left side */
+  .left {
+    width: 100%;
+    left: 0;
+  }
+  
+  /* Control the right side */
+  .right {
+    width: 75%;
+    right: 0;
+  }
+  
+ .left{
+    background-color: #e7e9f0;
+    height: auto;
+    border-radius: 5px;
+    padding: 15px;
+ }
+ .right{
+    background-color: #a0addf;
+    height: auto;
+    border-radius: 5px;
+    padding: 15px;
+ }
