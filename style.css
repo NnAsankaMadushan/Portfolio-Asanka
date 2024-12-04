@@ -1050,3 +1050,54 @@ nav .fas{
     border-radius: 5px;
     padding: 15px;
  }
+
+ .skills-container {
+    width: 50%;
+    text-align: center;
+}
+
+.skills-container h2 {
+    font-size: 28px; /* Slightly larger font size */
+    font-weight: bold; /* Bold text */
+    color: #2c2c2c; /* Darker text color */
+    text-align: left; /* Align to the left */
+    border-bottom: 3px solid #007bff; /* Add a bottom border with green color */
+    display: inline-block; /* To limit border to the text */
+    margin-bottom: 20px; /* Add some space below the heading */
+    padding-bottom: 5px; /* Padding to give spacing between text and border */
+}
+
+
+/* .skills-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4caf50;
+    display: inline-block;
+    padding-bottom: 5px;
+} */
+
+.skill {
+    margin: 15px 0;
+}
+
+.skill span {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #1a3e50; /* Light gray text for skill labels */
+}
+
+.progress {
+    width: 100%;
+    background-color: #263238; /* Dark gray for the progress background */
+    border-radius: 8px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #007bff; /* Green color for the progress bar */
+    transition: width 0.5s ease-in-out;
+}
