@@ -1043,12 +1043,14 @@ nav .fas{
     height: auto;
     border-radius: 5px;
     padding: 15px;
+    height: 100vh;
  }
  .right{
     background-color: #a0addf;
     height: auto;
     border-radius: 5px;
     padding: 15px;
+    height: 100vh;
  }
 
  .skills-container {
@@ -1101,3 +1103,33 @@ nav .fas{
     background-color: #007bff; /* Green color for the progress bar */
     transition: width 0.5s ease-in-out;
 }
+
+#image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ccc;
+  }
+  #image-container img {
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    animation: fade 9s infinite;
+    opacity: 0;
+  }
+  #image-container img:nth-child(1) {
+    animation-delay: 0s;
+  }
+  #image-container img:nth-child(2) {
+    animation-delay: 3s;
+  }
+  #image-container img:nth-child(3) {
+    animation-delay: 6s;
+  }
+  @keyframes fade {
+    0% { opacity: 0; }
+    33% { opacity: 1; }
+    66% { opacity: 1; }
+    100% { opacity: 0; }
+  }
