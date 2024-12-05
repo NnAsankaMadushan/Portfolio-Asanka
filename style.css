@@ -1021,7 +1021,7 @@ nav .fas{
   }
 
   .projects-container{
-    padding:100px 60px 00px 60px;
+    padding:40px 60px 00px 60px;
     display: flex;
     flex-direction: row;
   }
@@ -1043,6 +1043,8 @@ nav .fas{
     height: auto;
     border-radius: 5px;
     padding: 15px;
+    display: flex;
+    align-items: center;
     height: 100vh;
  }
  .right{
@@ -1109,7 +1111,10 @@ nav .fas{
     height: 100%;
     overflow: hidden;
     position: relative;
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
   }
   #image-container img {
     width: 100%;
