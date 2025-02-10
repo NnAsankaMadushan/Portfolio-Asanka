@@ -238,6 +238,25 @@
 }
 
 .about-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+}
+
+.about-card:hover .card-icon {
+    color: var(--accent-blue);
+    transform: scale(1.1);
+}
+
+.about-card .card-icon {
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: var(--text-secondary);
+}
+
+.about-card {
     background-color: rgba(17, 34, 64, 0.8);
     border-radius: 8px;
     padding: 2rem;
@@ -249,6 +268,25 @@
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+}
+
+.certificate-card, .project-card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover, .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+    z-index: 10;
+}
+
+.certificate-card .project-image, .project-card .project-image {
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover .project-image, .project-card:hover .project-image {
+    transform: scale(1.1);
 }
 
 /* Timeline Design */
