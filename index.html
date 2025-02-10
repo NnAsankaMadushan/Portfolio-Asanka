@@ -1,434 +1,914 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Asanka Madushan</title>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <script src="script.js"></script>
-    <body>
-        <header>
-            <h2 class="logo"><span>aSa</span>nka</h2>
-            <button class="toggle-button" onClick={toggleMenu}>
-                ☰
-              </button>
-            <nav id="navigation" class="navigation">
-                <a href="#home" class="nav-but">Home</a>
-                <a href="#about" class="nav-but">About</a>
-                <a href="#projects" class="nav-but">Projects</a>
-                <!-- <a href="#" class="nav-but">Blog</a> -->
-                <a href="#contact" class="nav-but">Contact</a>
-                <a href="images/Asanka Madushan.pdf" download="" class="tombol-download ">Download CV</a>
-              </nav>
-            
-        </header>
-        
-        <section id="home" class="home">
-            <div class="content">
-                <h2>Hi, I'm <span>Asanka</span></h2>
-                <h4 id="position-title">Frontend Developer</h4>
-                <p>I am currently pursuing my undergraduate studies in Electrical and Information Engineering at the University of Ruhuna, with a passion for front-end development. My unique blend of engineering knowledge and coding skills enables me to create dynamic, user-friendly web applications.</p>
-                <p>As a front-end developer, I specialize in crafting engaging, responsive interfaces using HTML, CSS, and JavaScript. My projects often incorporate modern frameworks and libraries, such as React.I'm constantly exploring new technologies to stay at the forefront of the ever-evolving tech landscape.</p>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0a192f;
+            --light-blue: #112240;
+            --accent-blue: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+        }
 
-                <p>I invite you to explore my portfolio to see examples of my work and learn more about my skills and experiences. Let's connect and create something amazing together!</p>
-                <div class="group-tombol">
-                    <a href="#contact">Hire Me</a>
-                    <a href="https://nnasankamadushan.github.io/Portfolio-Asanka/webdevelopment.html">View Projects</a>
-                </div>
-                <div class="sosmed">
-                    <a href="https://www.linkedin.com/in/asanka-madushan-84ba73211"><i class="bx bxl-linkedin-square" style="color:blue;"></i></a>
-                    <!-- <a href="#"><i class="bx bxl-tiktok" style="color:black;"></i></a> -->
-                    <!-- <a href="https://www.hackerrank.com/your-hackerrank-username"><i class="bx bxl-hackerrank" style="color:green;"></i></a> -->
-                    <a href="https://github.com/NnAsankaMadushan"><i class="bx bxl-github" style="color:black;"></i></a>
-                    <a href="https://www.youtube.com/@aSaBytes"><i class="bx bxl-youtube" style="color:red;"></i></a>
-                    <a href="https://www.instagram.com/asa___nka/"><i class="bx bxl-instagram-alt" style="color:rgb(218, 13, 57);"></i></a>        
-                </div>
-                
-            </div>
-            <div class="image-container">
-                <div class="shape"></div>
-                <img src="images/background2.png" alt="My Photo">
-            </div>
-        </section>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .cv-button {
+            background-color: transparent;
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 10% 2rem 10%;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 800px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            }
+            .social-icons a {
+                color: #5f5d5d;
+                font-size: 24px;
+                transition: color 0.3s ease;
+            }
+            .social-icons a:hover {
+                color: #007bff;
+            }
+
+        /* About Section */
+        .about {
+            padding: 5rem 10%;
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Add these new media queries for responsiveness */
+        @media screen and (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero{
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .social-icons{
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero {
+                padding: 7rem 5% 2rem 5%;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .about {
+                padding: 3rem 5%;
+            }
+
+            .about-card {
+                padding: 1.5rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            .social-icons{
+                justify-content: center;
+            }
+        }
+
+        /* Navigation media queries for completeness */
+        @media screen and (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .cv-button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+/* About Section Styles */
+.about {
+    padding: 5rem 10%;
+    background-color: var(--dark-blue);
+    min-height: 100vh;
+}
+
+.about h2 {
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+.about-card {
+    background-color: rgba(17, 34, 64, 0.8);
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+}
+
+.about-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Timeline Design */
+.timeline-content {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--accent-blue);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-blue);
+}
+
+.timeline-item p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+}
+
+/* Skills List */
+.skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .skill-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .skill-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .skill-icon {
+            font-size: 24px;
+            margin-right: 12px;
+            color: #007bff;
+        }
+        span {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding: 3rem 5%;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-card {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about {
+        padding: 2rem 5%;
+    }
+    
+    .about h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .timeline-item {
+        padding-left: 0.5rem;
+    }
+}
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 10%;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info a{
+            color: #4f78f3;
+            text-decoration: none;
+        }
+        .git a{
+            color: #4f78f3;
+            text-decoration: none;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: var(--light-blue);
+            margin: 5% auto;
+            padding: 2rem;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Certificates Section */
+        .certificates {
+            padding: 5rem 10%;
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certificate-card {
+            background-color: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 10%;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-blue);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: var(--light-blue);
+            border: 1px solid var(--text-secondary);
+            color: var(--text-primary);
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: var(--accent-blue);
+            color: var(--dark-blue);
+            border: none;
+            padding: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #45e0c0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
         </div>
+        <button class="cv-button">Download CV</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="./images/profile.png" alt="Profile Picture" class="profile-image">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Hello, I'm Asanka Madushan</h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                I am an Electrical and Information Engineering undergraduate at the University of Ruhuna.  
+                Passionate about web and mobile development, I work with React, React Native, Node.js, Flutter, MongoDB, and MySQL, along with CSS libraries like Chakra UI and Tailwind CSS.  
+                I also explore machine learning and cybersecurity to enhance digital security. Constantly learning and evolving, I strive to build innovative solutions.
+            </p>
+            <div class="social-icons" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://www.linkedin.com/in/asanka-madushan-84ba73211" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/NnAsankaMadushan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100005216388114" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@aSaBytes" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/asa___nka/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/images/profile11.png">
+        <h2 data-aos="fade-up">About Me</h2>
+        <div class="about-grid">
+            <!-- Skills Card -->
+            <div class="about-card" data-aos="fade-up">
+                <i class="fas fa-code card-icon"></i>
+                <h3>Technical Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <i class="fab fa-html5 skill-icon"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt skill-icon"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js skill-icon"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react skill-icon"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-node skill-icon"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-python skill-icon"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-flutter skill-icon"></i>
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react skill-icon"></i>
+                        <span>React Native</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab skill-icon"></i>
+                        <span>Machine Learning</span>
+                    </div>
                 </div>
-                <div class="about-col-2">
-                    <h2 class="sub-title">About <span>Me</span></h2>
-                    <p class="text">I am currently pursuing my undergraduate studies in Electrical and Information Engineering at the University of Ruhuna, with a passion for front-end development. My unique blend of engineering knowledge and coding skills enables me to create dynamic, user-friendly web applications.</p>
-                    <p class="text">As a front-end developer, I specialize in crafting engaging, responsive interfaces using HTML, CSS, and JavaScript. My projects often incorporate modern frameworks and libraries, such as React.I'm constantly exploring new technologies to stay at the forefront of the ever-evolving tech landscape.</p>
+            </div>
 
-                    <div class="tab-title">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+            <!-- Experience Card -->
+            <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-briefcase card-icon"></i>
+                <h3>Experience</h3>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <h4>Web Developer</h4>
+                        <p>Sri Lanka Ports Authority as an intern</p>
+                        <p>2023 Oct - 2024 Jan
+                        </p>
                     </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>UI?UX</span><br>Designing Web/App Interfaces</li>
-                            <li><span>Web Development</span><br>Frontend and Backend</li>
-                            <li><span>App Development</span><br>Building Android/IOS Apps</li>
-                            <li><span>Machine Learning</span><br>Machine Learning</li>
-                        </ul>
+                    <div class="timeline-item">
+                        <h4>Full Stack Developer & Mobile Developer</h4>
+                        <p>Waverista</p>
+                        <p>2024 - Present</p>
+
                     </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2023-Present</span><br>Working as a web developer in a startup company (Waverista)</li>
-                            <li><span>2023 Oct - 2024 Jan</span><br>Works at Sri Lanka Ports Authority as a Web Developer</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2020-Present</span><br>An undergraduate - Electrical and Information Engineering Department of Faculty of Engineering University of Ruhuna</li>
-                        </ul>
+                    <div class="timeline-item">
+                        <h4>Videographer and Photogrpher</h4>
+                        <p>REF Media</p>
                     </div>
                 </div>
             </div>
-    <section class="skills-container">
-        <div class="container-mywork">
-            <h2>Professional Skills</h2>
-        <div class="skill">
-            <span>React</span>
-            <div class="progress">
-                <div class="progress-bar" style="width: 80%;"></div>
+
+            <!-- Education Card -->
+            <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-graduation-cap card-icon"></i>
+                <h3>Education</h3>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <h4>Bachelor's Degree</h4>
+                        <p>Electrical and Information Engineering</p>
+                        <p>University of Ruhuna</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Specializations</h4>
+                        <p>Web Development</p>
+                        <p>Mobile Development</p>
+                        <p>UI/UX Designing</p>
+                        <p>Machine Learning</p>
+                        <p>Electronics</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <span>Node.js</span>
-            <div class="progress">
-                <div class="progress-bar" style="width: 70%;"></div>
-            </div>
-        </div>
-        <!-- <div class="skill">
-            <span>SpringBoot</span>
-            <div class="progress">
-                <div class="progress-bar" style="width: 60%;"></div>
-            </div>
-        </div> -->
-        <div class="skill">
-            <span>Java</span>
-            <div class="progress">
-                <div class="progress-bar" style="width: 75%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <span>Python</span>
-            <div class="progress">
-                <div class="progress-bar" style="width: 65%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <span>HTML, CSS</span>
-            <div class="progress">
-                <div class="progress-bar" style="width: 90%;"></div>
-            </div>
-        </div>
         </div>
     </section>
+
+    <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="container-mywork">
-            <h2 style="margin-bottom: 15px;margin-top: 15px;" class="sub-title">My <span>Work</span></h2>
-                <div class="card-container">
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/fms.html">
-                        <div style="margin-top: 5px;" class="status">Completed</div>
-                        <img src="images/fuel.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Fuel Management System</h3>
+        <h2 data-aos="fade-up">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="fade-up" onclick="openModal('Fuel Management System')">
+                <img src="./projects/Fuel Management System/fuel.png" alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <h3>Fuel Management System</h3>
+                    <p>Fuel Management System with four type of users (Vehicle, Station Owner, Operator and Admin).</p>
+                    <a href="https://github.com/Pradeep717/FuelQuotaManagementSystem" target="_blank">Git Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" onclick="openModal('Job Portal System')">
+                <img src="./projects/Job Portal System/job.png" alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <h3>Job Portal System</h3>
+                    <p>This project aims to create a job bank website that connects three primary user roles: companies, students, and lecturers.</p>
+                    <a href="https://github.com/Malkith99/Job-Portal-System-FRONTEND.git" target="_blank">Git Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" onclick="openModal('Enhanced IoT Security through Zero Trust Architecture Implementation')">
+                <img src="./projects/Enhanced IoT Security through Zero Trust Architecture Implementation/anomaly.png" alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <h3>Enhanced IoT Security through Zero Trust Architecture Implementation</h3>
+                    <p>This project implements a cutting-edge Zero Trust Architecture (ZTA) to ensure that no device is trusted by default, enhancing IoT network security with real-time, dynamic controls.</p>
+                    <a href="https://github.com/NnAsankaMadushan/Anomaly-Detection" target="_blank">Git Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" onclick="openModal('Money Mate App')">
+                <img src="./projects/Money Mate App/money.png" alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <h3>Money Mate App</h3>
+                    <p>This project implements platform with see the bills and online bill paying system.</p>
+                    <a href="https://github.com/NnAsankaMadushan/MoneyMate-frontend" target="_blank">Git Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" onclick="openModal('Train App')">
+                <img src="./projects/train App.png" alt="Train App" class="project-image">
+                <div class="project-info">
+                    <h3>Train App</h3>
+                    <p>Prototype of a train App using Figma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <h2 data-aos="fade-up">Certificates</h2>
+        <div class="certificate-grid">
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert1')">
+                <img src="./certificates/7.png" alt="Project 2" class="project-image">
+                <h3>Web Design for Beginners</h3>
+                <p>Issued by: University of Moratuwa</p>
+            </div>
+
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert2')">
+                <img src="./certificates/4.png" alt="Project 2" class="project-image">
+                <h3>Introduction to HTML</h3>
+                <p>Issued by: Caursera</p>
+            </div>
+            
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert3')">
+                <img src="./certificates/3.png" alt="Project 2" class="project-image">
+                <h3>Introduction to Back-End Development</h3>
+                <p>Issued by: Caursera</p>
+            </div>
+
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert4')">
+                <img src="./certificates/5.png" alt="Project 2" class="project-image">
+                <h3>Introduction to Front-End Development</h3>
+                <p>Issued by: Caursera</p>
+            </div>
+            
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert5')">
+                <img src="./certificates/6.png" alt="Project 2" class="project-image">
+                <h3>Supervised Machine Learning: Regression and Classification</h3>
+                <p>Issued by: Caursera</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 data-aos="fade-up">Contact Me</h2>
+        <div class="contact-grid">
+            <div class="contact-info" data-aos="fade-up">
+                <a href="mailto:nnamadushan@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    nnamadushan@gmail.com
+                </a>
+                <a href="tel:+94717775812">
+                    <i class="fas fa-phone"></i>
+                    +94 71 777 5812
+                </a>
+                <a href="https://github.com/NnAsankaMadushan">
+                    <i class="fab fa-github"></i>
+                    GitHub Profile
+                </a>
+                <a href="https://www.linkedin.com/in/asanka-madushan-84ba73211/">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn Profile
+                </a>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    No.45, Silvery crest, kekanadura, Matara
+                </p>
+            </div>
+            <form class="contact-form" data-aos="fade-up">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Modal functionality
+        function openModal(id) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            modal.style.display = 'block';
+            
+            // Add content based on ID
+            if (id === 'Train App') {
+                modalContent.innerHTML = `
+                    <h2>Train App</h2>
+                    <img src="./projects/train App.png" alt="Project Screenshot" style="width: 100%; margin: 1rem 0;">
+                    <p>Prototype of a train app with including train tracking, tickets booking and time of the train using Figma.</p>
+                `;
+            } else if (id === 'Fuel Management System') {
+                modalContent.innerHTML = `
+                    <h2>Fuel Management System</h2>
+                    <img src="./projects/Fuel Management System/fuel.png" alt="Certificate" style="width: 100%; margin: 1rem 0;">
+                    <p>Fuel Management System with four type of users (Vehicle, Station Owner, Operator and Admin).</p>
+                    <p>Showing available fuel quota and creating the QR code for each vehicle. Operator have the access to scan the QR code and check the available fuel quota and give supply wheather it's possible.</p>
+                    <div class="git">
                         <a href="https://github.com/Pradeep717/FuelQuotaManagementSystem" target="_blank">Git Repository</a>
-                        </div>
-                        </a>
-                        </a>
                     </div>
-
-                    
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/job.html">
-                        <div style="margin-top: 5px;" class="status">Completed</div>
-                        <img src="images/job.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Job Portal System</h3>
+                `;
+            }else if (id === 'Job Portal System') {
+                modalContent.innerHTML = `
+                    <h2>Job Portal System</h2>
+                    <img src="./projects/Job Portal System/job.png" alt="Certificate" style="width: 100%; margin: 1rem 0;">
+                    <p>This software project aims to create a job bank website that connects three primary user roles: companies, students, and lecturers.</p>
+                    <p>Companies will be able to post job opportunities, students can apply for those jobs, and lecturers can provide recommendations for students.</p>
+                    <p> Job Bank website will be built using the following technologies: Front-end: HTML, CSS, JavaScript, and a modern front-end framework like React or Angular. Back-end: A server-side programming language such as Python, Ruby, or Node.js, along with a web framework like Django, Ruby on Rails, or Express.js. Database: A relational database management system (RDBMS) like MySQL, PostgresSQL, or SQLite to store user information, job details, and recommendations. Authentication and Authorization: A secure authentication and authorization mechanism, such as JSON Web Tokens (JWT), to manage user login and access control. Version Control: Git will be used for version control and collaboration among the development team. Deployment: The website can be deployed on a cloud platform like AWS, Google Cloud, or Azure, or on a shared hosting provider.</p>
+                    <div class="git">
                         <a href="https://github.com/Malkith99/Job-Portal-System-FRONTEND.git" target="_blank">Git Repository</a>
-                        </div>
-                        </a>
                     </div>
-
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/anomaly.html">
-                        <div style="margin-top: 5px;" class="status">Completed</div>
-                        <img src="images/anomaly.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Anomaly Detection</h3>
-                        <h2 style="margin-bottom: 5px;">Machine Learning</h2>
+                `;
+            }
+            else if (id === 'Enhanced IoT Security through Zero Trust Architecture Implementation') {
+                modalContent.innerHTML = `
+                    <h2>Enhanced IoT Security through Zero Trust Architecture Implementation</h2>
+                    <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/jHwguD8HNXw"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>  
+                    <p>This project implements a cutting-edge Zero Trust Architecture (ZTA) to ensure that no device is trusted by default, enhancing IoT network security with real-time, dynamic controls.
+                    Project Highlights: Raspberry Pi 3B: Configured as a secure router for policy enforcement. Python Security Scripts: Real-time device trust evaluation and access control. Machine Learning Model: Autoencoder-based anomaly detection for proactive threat mitigation. Dynamic Access Control: Lightweight, scalable, and superior to traditional methods. 🔹 Key Benefits: ✔ Zero Trust access control for robust security. ✔ Real-time threat detection and prevention. ✔ Scalable implementation for IoT ecosystems. 💻 Tech Stack: Linux | Python | Flask | React 🎯 My Contributions: Machine Learning Model Development: Trained and implemented an autoencoder-based anomaly detection model to identify unusual network patterns. Preprocessed data, fine-tuned the model, and compared its performance with other Machine Learning and Deep Learning models, including One Class SVM, Local Outlier Factor, Isolation Forrest, LSTM, and GRU, ensuring effectiveness for real-time IoT security. User Interface Development: Built a React-based interface to display real-time data on connected devices, trust scores, and security statuses, enabling intuitive monitoring and policy management. </p>
+                    <div class="git">
                         <a href="https://github.com/NnAsankaMadushan/Anomaly-Detection" target="_blank">Git Repository</a>
-                        </div>
-                        </a>
                     </div>
+                `;
+            }
+            else if (id === 'Money Mate App') {
+                modalContent.innerHTML = `
+                    <h2>Money Mate App</h2>
+                    <video src="./projects/Money Mate App/money.mp4" controls width="100%" height="415" style="margin: 1rem 0; border: 1px solid #ccc; border-radius: 8px;""></video>
 
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/keyboard.html">
-                        <div style="margin-top: 5px;" class="status">Completed</div>
-                        <img src="images/ai.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Virtual AI Keyboard</h3>
-                        <a href="https://github.com/Pradeep717/AI_Virtual_Keyboard.git" target="_blank">Git Repository</a>
-                        </div>
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/money.html">
-                        <div style="margin-top: 5px;" class="status-pending">On Going</div>
-                        <img src="images/1.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Money Mate</h3>
-                        <h2 style="margin-bottom: 5px;">Mobile App</h2>
+                    <p>This project implements platform with see the bills and online bill paying system.</p>
+                    <div class="git">
                         <a href="https://github.com/NnAsankaMadushan/MoneyMate-frontend" target="_blank">Git Repository</a>
-                        </div>
-                        </a>
                     </div>
+                `;
+            }
+            else if (id === 'cert1') {
+                modalContent.innerHTML = `
+                    <h2>Web Design for Beginners</h2>
+                    <iframe 
+                        src="https://drive.google.com/file/d/1mF00gc1C-NpT2iJCHJLa6j5lxMOYa6x-/preview" 
+                        style="width: 100%; height: 500px; border: none; margin: 1rem 0;">
+                    </iframe>
+                    <p>Issued by : University of Moratuwwa</p>
+                `;
+            }
+            else if (id === 'cert5') {
+                modalContent.innerHTML = `
+                    <h2>Web Design for Beginners</h2>
+                    <iframe 
+                        src="https://drive.google.com/file/d/1PXeID7BRKzMIC80VB5J17qCn4Fqgz4i_/preview" 
+                        style="width: 100%; height: 500px; border: none; margin: 1rem 0;">
+                    </iframe>
+                    <p>Issued by : Caursera</p>
+                `;
+            }
 
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/restuarent.html">
-                        <div style="margin-top: 5px;" class="status-pending">On Going</div>
-                        <img src="images/3.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Restuarent Management</h3>
-                        <h3 style="margin-bottom: 5px;">System</h3>
-                        <a href="https://github.com/NnAsankaMadushan/Restaurant-website-" target="_blank">Git Repository</a>
-                        </div>
-                        </a>
-                    </div>
+        }
 
-                    <div class="card">
-                        <a style="cursor: pointer;" href="https://nnasankamadushan.github.io/Portfolio-Asanka/train.html">
-                        <div style="margin-top: 5px;" class="status-pending">On Going</div>
-                        <img src="Train/train App.png" alt="Card preview">
-                        <div class="content">
-                        <h3 style="margin-bottom: 5px;">Train Tracker</h3>
-                        <h3 style="margin-bottom: 5px;">App</h3> 
-                        <a href="https://www.figma.com/design/MfW9pMLB1DnCbZPOGxbqf5/train-App?node-id=0-1&p=f&t=IGpW09As3XsMEtb5-0" target="_blank">Figma</a>
-                    </div>
-                    </a>
-                    </div>
-            </div>
-            
-            <!-- <a href="https://nnasankamadushan.github.io/Portfolio-Asanka/webdevelopment.html" class="btn">See more</a> -->
-        </div>
-    </section>
-            <div class="certificates">
-                <h1 class="sub-title">Certifications</h1>
-                <div class="certifications-grid">
-                    <a href="https://drive.google.com/file/d/your-drive-id-1/view" target="_blank">
-                        <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/1.png" alt="Certification 1">
-                    </a>
-                    <a href="https://drive.google.com/file/d/your-drive-id-2/view" target="_blank">
-                        <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/2.jpg" alt="Certification 2">
-                    </a>
-                    <a href="https://drive.google.com/file/d/your-drive-id-3/view" target="_blank">
-                        <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/3.png" alt="Certification 3">
-                    </a>
-                    <a href="https://drive.google.com/file/d/your-drive-id-4/view" target="_blank">
-                        <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/4.png" alt="Certification 4">
-                    </a>
-                    <a href="https://drive.google.com/file/d/your-drive-id-5/view" target="_blank">
-                        <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/5.png" alt="Certification 5">
-                    </a>
-                    <a href="https://drive.google.com/file/d/1PXeID7BRKzMIC80VB5J17qCn4Fqgz4i_/view?usp=drive_link" target="_blank">
-                        <img src="https://nnasankamadushan.github.io/Portfolio-Asanka/certificates/6.png" alt="Certification 6">
-                    </a>
-                </div>
-            </div>
-            
-            
-        </div>
-    </section>
-    <!-- <section class="projects">
-        <div class="service-container">
-            <h2 class="sub-title">My <span>Projects</span></h2>
-            <div class="services-list">
-                <div class="services">
-                    <a href="https://nnasankamadushan.github.io/Portfolio-Asanka/webdevelopment.html">
-                        <i class="fa-solid fa-code"></i>
-                        <h2 class="web-text">UI/UX Design</h2>
-                        <p>I am designing the UI/UX according to the client's requests and aesthetic preferences using Figma.</p>
-                        <a>See Details</a>
-                    </a>
-                </div>
-                <div class="services">
-                    <a href="https://nnasankamadushan.github.io/Portfolio-Asanka/webdevelopment.html">
-                        <i class="fa-solid fa-crop-simple"></i>
-                        <h2 class="web-text">Web Development</h2>
-                        <p>Developing web applications mainly using React and PHP.</p>
-                        <a>See Details</a>
-                    </a>
-                </div>
-                <div class="services">
-                    <a href="https://nnasankamadushan.github.io/Portfolio-Asanka/mobliedevelompent.html">
-                        <i class="fa-brands fa-app-store"></i>
-                        <h2 class="web-text">Mobile Application</h2>
-                        <p>Developing mobile applications using React Native.</p>
-                        <a>See Details</a>
-                    </a>
-                    
-                </div>
-                <div class="services">
-                    <a href="https://nnasankamadushan.github.io/Portfolio-Asanka/webdevelopment.html">
-                        <i class="fa-solid fa-code"></i>
-                        <h2 class="web-text">Machine Learning</h2>
-                        <p></p>
-                        <a>See Details</a>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
 
-    <section id="contact">
-        <div>
-            <div class="container-mywork">
-                <h2 class="sub-title">Contact <span>Me</span></h2>
-                <div class="contact-row">
-                <div class="contact-left">
-                    <p><i class="bx bx-map icon-color"></i> No.45, Silvery Crest, Kekanadura, Matara</p>
-                    <p><i class="bx bx-envelope icon-color"></i> nnamadushan@gmail.com</p>
-                    <p><i class="bx bx-phone icon-color"></i> 0717775812</p>
-                    <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/asanka-madushan-84ba73211"><i class="bx bxl-linkedin"></i></a>
-                    <a href="https://web.facebook.com/profile.php?id=100005216388114"><i class="bx bxl-facebook-circle"></i></a>
-                    <a href=""><i class="bx bxl-twitter"></i></a>
-                    <a href="https://www.instagram.com/asa___nka/"><i class="bx bxl-instagram"></i></a>
-                    </div>
-                    <a href="images/Asanka Madushan.pdf" download="" class="btn btn2">Download CV</a>
-                    
-                </div>
-                <div class="contact-right">
-                    
-                    <!-- <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea> 
-                    <button type="submit" class="btn btn2">Send Message</button>
-                    <span id="msg"></span>
-                    </form> -->
-                </div>
-                </div>
-            </div>
-            </div>
-            <!-- <div class="copyright">
-                <p>Copyright ©️ Asanka. Undergraduate at University of Ruhuna</p>
-            </div> -->
-    </section>
-        <script>
-            // Function to check if an element is in viewport
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
-    
-            // Function to add 'active' class to elements in view
-            function checkSections() {
-                const sections = document.querySelectorAll('.section');
-                sections.forEach(section => {
-                    if (isInViewport(section)) {
-                        section.classList.add('active');
-                    }
-                });
+        }
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const response = await fetch('/send-email', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                this.reset();
+            } else {
+                alert('Error sending message. Please try again.');
             }
-    
-            // Run checkSections on scroll
-            window.addEventListener('scroll', checkSections);
-    
-            // Run checkSections on page load
-            window.addEventListener('load', checkSections);
-        </script>
-        <script>
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-            function opentab(tabname){
-                for(tablink of tablinks){
-                    tablink.classList.remove("active-link");
-                }
-                for(tabcontent  of tabcontents){
-                    tabcontent.classList.remove("active-tab");
-                }
-                event.currentTarget.classList.add("active-link");
-                document.getElementById(tabname).classList.add("active-tab");
-            }
-        </script>
-        <script>
-            var sidemenu = document.getElementById("sidemenu");
-            function openmenu(){
-                sidemenu.style.right = "0";
-            }
-            function closemenu(){
-                sidemenu.style.right = "-200px";
-            }
-        </script>
-          <script>
-             const [menuOpen, setMenuOpen] = useState(false);
-             const toggleMenu = () => {
-                setMenuOpen(!menuOpen);
-            };
-          </script>
-          <script>
-            const titles = [
-                "Web Developer",
-                "UI/UX Designer",
-                "AI/ML Engineer",
-                "Mobile App Developer",
-                "Photographer",
-            ];
+        });
+
+        // CV download
+        document.querySelector('.cv-button').addEventListener('click', function() {
+            const cvLink = './Resume/Asanka_Madushan.pdf';
+
+            const link = document.createElement('a');
+            link.href = cvLink;
+            link.download = 'Asanka_Madushan.pdf';  // The name the file will be saved as
+            link.click();  // Trigger the download
             
-            let currentTitleIndex = 0; // To keep track of the current title
-            let charIndex = 0; // To keep track of the current character
-            let isDeleting = false; // To determine if we are adding or deleting characters
-            
-            // Function to type the title character by character
-            function typeTitle() {
-                const titleElement = document.getElementById('position-title');
-                const currentTitle = titles[currentTitleIndex];
-                
-                if (isDeleting) {
-                    titleElement.textContent = currentTitle.substring(0, charIndex - 1);
-                    charIndex--;
-            
-                    if (charIndex === 0) {
-                        isDeleting = false;
-                        currentTitleIndex = (currentTitleIndex + 1) % titles.length;
-                    }
-                } else {
-                    titleElement.textContent = currentTitle.substring(0, charIndex + 1);
-                    charIndex++;
-            
-                    if (charIndex === currentTitle.length) {
-                        isDeleting = true;
-                        setTimeout(typeTitle, 2000); // Pause at the full word before deleting
-                        return;
-                    }
-                }
-            
-                setTimeout(typeTitle, isDeleting ? 100 : 150); // Speed of typing/deleting
-            }
-            
-            // Start typing effect on page load
-            document.addEventListener("DOMContentLoaded", typeTitle);
-            </script>
-    </body>
+            // alert('CV download started!');
+        });
+
+    </script>
+</body>
 </html>
