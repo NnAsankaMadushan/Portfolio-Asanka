@@ -605,9 +605,46 @@
                 text-align: center;
             }
         }
+        .viewers-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--light-blue);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            animation: fadeIn 0.5s ease-out;
+            font-size: 0.9rem;
+        }
+
+        .viewers-popup i,
+        .viewers-popup ,
+        .viewers-popup span
+        {
+            color: var(--accent-blue);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="viewers-popup">
+        <i class="fas fa-eye"></i>
+        <span id="viewer-count">0</span> Views
+    </div>
     <!-- Navigation -->
     <nav>
         <div class="nav-links">
@@ -876,6 +913,30 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // Function to get total views from localStorage or initialize it
+        function getTotalViews() {
+            const storedViews = localStorage.getItem('totalPageViews');
+            return storedViews ? parseInt(storedViews) : 0;
+        }
+
+        // Function to increment and update the view count
+        function updateTotalViews() {
+            let totalViews = getTotalViews();
+            
+            // Check if this is a new session
+            if (!sessionStorage.getItem('viewCounted')) {
+                totalViews += 1;
+                localStorage.setItem('totalPageViews', totalViews);
+                sessionStorage.setItem('viewCounted', 'true');
+            }
+            
+            // Update the display
+            const viewerCount = document.getElementById('viewer-count');
+            viewerCount.textContent = totalViews.toLocaleString(); // Format number with commas
+        }
+
+        // Initialize when the page loads
+        document.addEventListener('DOMContentLoaded', updateTotalViews);
         // Initialize AOS
         AOS.init({
             duration: 1000,
