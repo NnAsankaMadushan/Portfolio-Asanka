@@ -835,6 +835,12 @@
     <section id="certificates" class="certificates">
         <h2 data-aos="fade-up">Certificates</h2>
         <div class="certificate-grid">
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert6')">
+                <img src="./certificates/8.png" alt="Project 6" class="project-image">
+                <h3>Python for Data Science, AI & Development</h3>
+                <p>Issued by: IBM</p>
+            </div>
+
             <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert1')">
                 <img src="./certificates/7.png" alt="Project 2" class="project-image">
                 <h3>Web Design for Beginners</h3>
@@ -1017,6 +1023,16 @@
                     <div class="git">
                         <a href="https://github.com/NnAsankaMadushan/MoneyMate-frontend" target="_blank">Git Repository</a>
                     </div>
+                `;
+            }
+            else if (id === 'cert6') {
+                modalContent.innerHTML = `
+                    <h2>Python for Data Science, AI & Development</h2>
+                    <iframe 
+                        src="https://drive.google.com/file/d/1ztKdquIRYO6xZ5lsZuFIF3TP65l_f8tg/preview" 
+                        style="width: 100%; height: 500px; border: none; margin: 1rem 0;">
+                    </iframe>
+                    <p>Issued by : IBM</p>
                 `;
             }
             else if (id === 'cert1') {
