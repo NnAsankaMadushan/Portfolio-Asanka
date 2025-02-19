@@ -641,10 +641,10 @@
     </style>
 </head>
 <body>
-    <div class="viewers-popup">
+    <!-- <div class="viewers-popup">
         <i class="fas fa-eye"></i>
         <span id="viewer-count">0</span> Views
-    </div>
+    </div> -->
     <!-- Navigation -->
     <nav>
         <div class="nav-links">
@@ -835,10 +835,17 @@
     <section id="certificates" class="certificates">
         <h2 data-aos="fade-up">Certificates</h2>
         <div class="certificate-grid">
+            
             <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert6')">
                 <img src="./certificates/8.png" alt="Project 6" class="project-image">
                 <h3>Python for Data Science, AI & Development</h3>
                 <p>Issued by: IBM</p>
+            </div>
+
+            <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert7')">
+                <img src="./certificates/9.png" alt="Project 6" class="project-image">
+                <h3>Lens-Kubernetes IDE</h3>
+                <p>Issued by: KodeKloud</p>
             </div>
 
             <div class="certificate-card" data-aos="fade-up" onclick="openModal('cert1')">
@@ -1033,6 +1040,16 @@
                         style="width: 100%; height: 500px; border: none; margin: 1rem 0;">
                     </iframe>
                     <p>Issued by : IBM</p>
+                `;
+            }
+            else if (id === 'cert7') {
+                modalContent.innerHTML = `
+                    <h2>Lens-Kubernetes IDE</h2>
+                    <iframe 
+                        src="https://drive.google.com/file/d/1h4fZ91Zn0-d2pLcaErEcQyqv7afOmw_g/preview" 
+                        style="width: 100%; height: 500px; border: none; margin: 1rem 0;">
+                    </iframe>
+                    <p>Issued by : KodeKloud</p>
                 `;
             }
             else if (id === 'cert1') {
