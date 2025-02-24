@@ -828,6 +828,14 @@
                     <p>Prototype of a train App using Figma.</p>
                 </div>
             </div>
+
+            <div class="project-card" data-aos="fade-up" onclick="openModal('Driver App')">
+                <img src="./projects/Driver App/Driving.png" alt="Train App" class="project-image">
+                <div class="project-info">
+                    <h3>Driver App</h3>
+                    <p>This project implements platform drivers to find hires easily.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1029,6 +1037,17 @@
                     <p>This project implements platform with see the bills and online bill paying system.</p>
                     <div class="git">
                         <a href="https://github.com/NnAsankaMadushan/MoneyMate-frontend" target="_blank">Git Repository</a>
+                    </div>
+                `;
+            }
+            else if (id === 'Driver App') {
+                modalContent.innerHTML = `
+                    <h2>Driver App</h2>
+                    <video src="./projects/Driver App/driver app.mp4" controls width="100%" height="415" style="margin: 1rem 0; border: 1px solid #ccc; border-radius: 8px;""></video>
+
+                    <p>This project implements platform drivers to find hires easily</p>
+                    <div class="git">
+                        <a href="https://github.com/Waverista/Driver-App.git" target="_blank">Git Repository</a>
                     </div>
                 `;
             }
